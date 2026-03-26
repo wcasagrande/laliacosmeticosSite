@@ -1,16 +1,73 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="pt-br">
 
 <head>
     <title>Lalia Cosméticos</title>
-    <link rel="icon" type="image/png" href="favicon.png" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Lalia Cosméticos em Herval d'Oeste/SC. Maquiagens, skincare e fragrâncias exclusivas das melhores marcas.">
+    
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "Lalia Cosméticos",
+            "url": "https://laliacosmeticos.com.br/"
+        }
+    </script>
+
+    <link rel="icon" type="image/png" href="favicon.png" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css" />
     </noscript>
+
+    <style>
+        /* --- CONFIGURAÇÃO PADRÃO (PARA COMPUTADOR/DESKTOP) --- */
+        
+        /* Ajusta o container do carrossel para 50% e centraliza */
+        .spotlight .image {
+            max-width: 50% !important; /* Tamanho do container */
+            width: 50% !important;
+            margin: 0 auto !important; /* Centraliza no espaço disponível */
+            border-radius: 12px !important;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background: transparent !important;
+        }
+
+        /* Garante que as imagens preencham 100% do container */
+        .spotlight .image img, 
+        .splide__slide img {
+            border-radius: 12px !important;
+            width: 100% !important; 
+            height: auto !important;
+            display: block;
+        }
+
+        /* Remove a máscara circular do template */
+        .spotlight .image::before {
+            display: none !important;
+        }
+
+        /* Estiliza as setas do Splide */
+        .splide__arrow {
+            background: rgba(255, 255, 255, 0.5) !important;
+            opacity: 1 !important;
+        }
+
+        /* --- CONFIGURAÇÃO PARA CELULAR (MOBILE) --- */
+        
+        /* Media Query para telas menores que 980px (padrão do template Stellar) */
+        @media screen and (max-width: 980px) {
+            .spotlight .image {
+                max-width: 100% !important; /* No celular, ocupa a largura total */
+                width: 100% !important;
+                margin-top: 2em !important; /* Dá um espaço em relação ao texto acima */
+            }
+        }
+    </style>
 </head>
 
 <body class="is-preload">
@@ -40,12 +97,27 @@
                         <header class="major">
                             <h2>Beleza que Transforma</h2>
                         </header>
-                        <p>Na Lalia Cosméticos, selecionamos cuidadosamente cada produto para garantir qualidade e resultados surpreendentes. Conheça nossa linha completa de maquiagens, cuidados com a pele e fragrâncias exclusivas.</p>
+                        <p>Na Lalia Cosméticos, selecionamos cuidadosamente cada produto para garantir qualidade e resultados surpreendentes. Conheça nossa linha completa de maquiagens, skincare e fragrâncias exclusivas.</p>
                         <ul class="actions">
                             <li><a href="#first" class="button">Ver Catálogo</a></li>
                         </ul>
                     </div>
-                    <span class="image"><img src="images/pic01.jpg" alt="Produtos Lalia" /></span>
+                    <div class="image">
+                        <section class="splide" aria-label="Destaques Lalia Cosméticos">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide"><img src="images/carrossel01.jpg" alt="212 Vip Black" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel02.jpg" alt="Lady Million" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel03.jpg" alt="Collagen Botox Karseell" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel04.jpg" alt="Collagen Karseell" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel05.jpg" alt="Esmaltes" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel06.jpg" alt="Labotrat Skincare" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel07.jpg" alt="Forever Liss" style="width:100%; height:auto;"></li>
+                                    <li class="splide__slide"><img src="images/carrossel08.jpg" alt="ViniLady" style="width:100%; height:auto;"></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </section>
 
@@ -57,17 +129,17 @@
                     <li>
                         <span class="icon solid major style1 fa-heart"></span>
                         <h3>Maquiagem</h3>
-                        <p>Linha completa para rosto, olhos e lábios com as melhores marcas do mercado.</p>
+                        <p>Linha completa para rosto, olhos e lábios com as melhores marcas.</p>
                     </li>
                     <li>
                         <span class="icon major style3 fa-leaf"></span>
                         <h3>Skincare</h3>
-                        <p>Tratamentos faciais e corporais para manter sua pele sempre saudável e radiante.</p>
+                        <p>Tratamentos faciais e corporais para manter sua pele sempre radiante.</p>
                     </li>
                     <li>
                         <span class="icon major style5 fa-magic"></span>
                         <h3>Fragrâncias</h3>
-                        <p>Perfumes selecionados que marcam presença e expressam sua personalidade.</p>
+                        <p>Perfumes selecionados que expressam sua personalidade.</p>
                     </li>
                 </ul>
                 <footer class="major">
@@ -83,7 +155,7 @@
                     <p>Confira os itens que são tendência e não podem faltar na sua necessaire.</p>
                 </header>
                 <p class="content">
-                    Trabalhamos com marcas renomadas e produtos originais. Nosso compromisso é oferecer não apenas cosméticos, mas uma experiência de autocuidado completa para nossas clientes em Herval d'Oeste e região. Visite nossa loja e descubra o que há de mais moderno no mundo da beleza.
+                    Trabalhamos com marcas renomadas e produtos originais. Nosso compromisso é oferecer não apenas cosméticos, mas uma experiência de autocuidado completa para nossas clientes em Herval d'Oeste e região.
                 </p>
             </section>
 
@@ -105,10 +177,10 @@
         <footer id="footer">
             <section>
                 <h2>Sobre a Lalia Cosméticos</h2>
-                <p>Especialista em cosméticos de alta qualidade, trazendo as últimas tendências de beleza para Herval d'Oeste/SC.</p>
+                <p>Especialista em cosméticos de alta qualidade em Herval d'Oeste/SC.</p>
             </section>
             <section>
-                <h2>Nosso Contato</h2>
+                <h2>Contato</h2>
                 <dl class="alt">
                     <dt>Endereço</dt>
                     <dd>Av. Santos Dumont, 204 - Centro &bull; Herval d'Oeste/SC</dd>
@@ -122,7 +194,7 @@
                     <li><a href="https://www.instagram.com/laliacosmeticos" class="icon brands fa-instagram alt"><span class="label">Instagram</span></a></li>
                 </ul>
             </section>
-            <p class="copyright">&copy; Lalia Cosméticos. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+            <p class="copyright">&copy; Lalia Cosméticos - by @wagcasagrande - Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
         </footer>
 
     </div>
@@ -134,7 +206,20 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Splide('.splide', {
+                type: 'loop',
+                perPage: 1,
+                autoplay: true,
+                interval: 4000,
+                arrows: true,
+                pagination: true,
+            }).mount();
+        });
+    </script>
 
 </body>
-
 </html>
