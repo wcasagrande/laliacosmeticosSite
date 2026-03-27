@@ -1,31 +1,30 @@
-Stellar by HTML5 UP
-html5up.net | @ajlkn
-Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+# Lalia Cosméticos
 
+## Sobre o Site
 
-Say hello to Stellar, a slick little one-pager with a super vibrant color palette (which
-I guess you can always tone down if it's a little too vibrant for you), a "sticky" in-page
-nav bar (powered by my Scrollex plugin), a separate generic page template (just in case
-you need one), and an assortment of pre-styled elements.
+Lalia Cosméticos é uma plataforma de e-commerce dedicada à venda de produtos de beleza e cosméticos de qualidade.
 
-Demo images* courtesy of Unsplash, a radtastic collection of CC0 (public domain) images
-you can use for pretty much whatever.
+## Características Principais
 
-(* = not included)
+- Catálogo completo de produtos de beleza
+- Checkout seguro e rápido
+- Entrega em todo o país
+- Atendimento ao cliente 24/7
+- Programas de fidelidade e promoções
 
-AJ
-aj@lkn.io | @ajlkn
+## Tecnologias Utilizadas
 
+- HTML5
+- CSS3
+- JavaScript
+- Responsivo para mobile
 
-Credits:
+## Contato
 
-	Demo Images:
-		Unsplash (unsplash.com)
+- Email: contato@laliacosmeticos.com.br
+- Telefone: (XX) XXXX-XXXX
 
-	Icons:
-		Font Awesome (fontawesome.io)
+## Redes Sociais
 
-	Other:
-		jQuery (jquery.com)
-		Scrollex (github.com/ajlkn/jquery.scrollex)
-		Responsive Tools (github.com/ajlkn/responsive-tools)
+- Instagram: @laliacosmeticos
+- Facebook: LaliaCosméticos
