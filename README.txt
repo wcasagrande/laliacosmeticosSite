@@ -2,15 +2,9 @@
 
 ## Sobre o Site
 
-Lalia Cosméticos é uma plataforma de e-commerce dedicada à venda de produtos de beleza e cosméticos de qualidade.
+A Lalia Cosméticos é dedicada à venda de produtos de beleza e cosméticos de qualidade.
 
 ## Características Principais
-
-- Catálogo completo de produtos de beleza
-- Checkout seguro e rápido
-- Entrega em todo o país
-- Atendimento ao cliente 24/7
-- Programas de fidelidade e promoções
 
 ## Tecnologias Utilizadas
 
@@ -21,8 +15,8 @@ Lalia Cosméticos é uma plataforma de e-commerce dedicada à venda de produtos 
 
 ## Contato
 
-- Email: contato@laliacosmeticos.com.br
-- Telefone: (XX) XXXX-XXXX
+- Email: laliacosmeticos@gmail.com.br
+- Telefone: (49) 99914-3304
 
 ## Redes Sociais
 
