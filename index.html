@@ -1,254 +1,552 @@
-<!DOCTYPE HTML>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
+  <head>
     <title>Lalia Cosméticos</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Lalia Cosméticos em Herval d'Oeste/SC. Maquiagens, skincare e fragrâncias exclusivas.">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta
+      name="description"
+      content="Lalia Cosméticos em Herval d'Oeste/SC. Maquiagens, skincare e fragrâncias exclusivas."
+    />
 
     <script type="application/ld+json">
-        {
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Lalia Cosméticos",
-            "url": "https://laliacosmeticos.com.br/"
-        }
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Lalia Cosméticos",
+        "url": "https://laliacosmeticos.com.br/"
+      }
     </script>
 
     <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
 
     <style>
-        /* Variáveis de Cores */
-        :root {
-            --primary: #d44c5c; /* Rosa Lalia */
-            --dark: #352151;
-            --light: #f4f4f4;
-            --white: #ffffff;
+      /* Variáveis de Cores */
+      :root {
+        --primary: #d44c5c; /* Rosa Lalia */
+        --dark: #352151;
+        --light: #f4f4f4;
+        --white: #ffffff;
+      }
+
+      /* Reset Básico */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--white);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+      }
+      ul {
+        list-style: none;
+      }
+
+      /* Header & Nav */
+      header {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 4em 2em;
+      }
+      header img {
+        max-width: 200px;
+        margin-bottom: 1em;
+      }
+
+      nav {
+        background: var(--white);
+        border-bottom: 1px solid #eee;
+        top: 0;
+        z-index: 1000;
+        text-align: center;
+        padding: 1em 0;
+        position: sticky;
+        top: 0;
+      }
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      /* Seção Principal (Intro) */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4em 20px;
+      }
+      .spotlight {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        flex-wrap: wrap;
+      }
+      .content {
+        flex: 1;
+        min-width: 300px;
+      }
+      .content h2 {
+        font-size: 2.5em;
+        margin-bottom: 0.5em;
+        color: var(--primary);
+      }
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 12px 30px;
+        border-radius: 50px;
+        margin-top: 1em;
+        font-weight: bold;
+      }
+      .btn:hover {
+        background: #b33a48;
+        transform: translateY(-3px);
+      }
+
+      /* --- CARROSSEL PURE CSS (ATUALIZADO) --- */
+      .slider-box {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+      }
+      .wrapper {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+      .wrapper input {
+        display: none;
+      }
+
+      .inner {
+        width: 800%;
+        display: flex;
+        transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1);
+      }
+      article {
+        width: 12.5%;
+      }
+      article img {
+        width: 100%;
+        display: block;
+        height: 500px;
+        object-fit: cover;
+      }
+
+      /* Lógica de Movimento */
+      #slide1:checked ~ .slider-wrapper .inner {
+        margin-left: 0;
+      }
+      #slide2:checked ~ .slider-wrapper .inner {
+        margin-left: -100%;
+      }
+      #slide3:checked ~ .slider-wrapper .inner {
+        margin-left: -200%;
+      }
+      #slide4:checked ~ .slider-wrapper .inner {
+        margin-left: -300%;
+      }
+      #slide5:checked ~ .slider-wrapper .inner {
+        margin-left: -400%;
+      }
+      #slide6:checked ~ .slider-wrapper .inner {
+        margin-left: -500%;
+      }
+      #slide7:checked ~ .slider-wrapper .inner {
+        margin-left: -600%;
+      }
+      #slide8:checked ~ .slider-wrapper .inner {
+        margin-left: -700%;
+      }
+
+      /* --- SETAS DE NAVEGAÇÃO --- */
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+        display: none; /* Escondido por padrão, mostrado via check */
+        justify-content: space-between;
+        padding: 0 10px;
+        z-index: 10;
+        pointer-events: none;
+      }
+
+      .slider-nav label {
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        pointer-events: auto;
+        color: var(--dark);
+        transition: 0.3s;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+
+      .slider-nav label:hover {
+        background: var(--white);
+        color: var(--primary);
+      }
+
+      /* Lógica para mostrar as setas certas para cada slide */
+      #slide1:checked ~ .nav-1,
+      #slide2:checked ~ .nav-2,
+      #slide3:checked ~ .nav-3,
+      #slide4:checked ~ .nav-4,
+      #slide5:checked ~ .nav-5,
+      #slide6:checked ~ .nav-6,
+      #slide7:checked ~ .nav-7,
+      #slide8:checked ~ .nav-8 {
+        display: flex;
+      }
+
+      /* Categorias (Features) */
+      .special-title {
+        text-align: center;
+        margin-bottom: 3em;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        text-align: center;
+      }
+      .feature-item {
+        padding: 2em;
+        background: var(--light);
+        border-radius: 10px;
+      }
+      .feature-item i {
+        font-size: 3em;
+        color: var(--primary);
+        margin-bottom: 0.5em;
+      }
+
+      /* Footer */
+      footer {
+        background: var(--dark);
+        color: #999;
+        padding: 4em 20px;
+      }
+      .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+      .footer-grid h2 {
+        color: white;
+        margin-bottom: 1em;
+      }
+      .footer-grid dd {
+        color: white;
+        margin-bottom: 1em;
+      }
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 1em;
+      }
+      .social-icons a {
+        font-size: 1.5em;
+        color: white;
+      }
+      .copyright {
+        text-align: center;
+        margin-top: 4em;
+        font-size: 0.8em;
+      }
+
+      /* Mobile */
+      @media (max-width: 768px) {
+        .spotlight {
+          flex-direction: column;
+          text-align: center;
         }
-
-        /* Reset Básico */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: var(--dark); background-color: var(--white); }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        /* Header & Nav */
-        header { background: var(--dark); color: white; text-align: center; padding: 4em 2em; }
-        header img { max-width: 200px; margin-bottom: 1em; }
-        
-        nav { background: var(--white); border-bottom: 1px solid #eee; top: 0; z-index: 1000; text-align: center; padding: 1em 0; position: sticky; top: 0; }
-        nav ul { display: flex; justify-content: center; gap: 20px; }
-        nav a:hover { color: var(--primary); }
-
-        /* Seção Principal (Intro) */
-        .container { max-width: 1200px; margin: 0 auto; padding: 4em 20px; }
-        .spotlight { display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
-        .content { flex: 1; min-width: 300px; }
-        .content h2 { font-size: 2.5em; margin-bottom: 0.5em; color: var(--primary); }
-        .btn { display: inline-block; background: var(--primary); color: white; padding: 12px 30px; border-radius: 50px; margin-top: 1em; font-weight: bold; }
-        .btn:hover { background: #b33a48; transform: translateY(-3px); }
-
-        /* --- CARROSSEL PURE CSS (ATUALIZADO) --- */
-        .slider-box { flex: 1; min-width: 300px; position: relative; }
-        .wrapper { width: 100%; position: relative; overflow: hidden; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .wrapper input { display: none; }
-        
-        .inner { width: 800%; display: flex; transition: all 800ms cubic-bezier(0.77, 0, 0.175, 1); }
-        article { width: 12.5%; }
-        article img { width: 100%; display: block; height: 500px; object-fit: cover; }
-
-        /* Lógica de Movimento */
-        #slide1:checked ~ .slider-wrapper .inner { margin-left: 0; }
-        #slide2:checked ~ .slider-wrapper .inner { margin-left: -100%; }
-        #slide3:checked ~ .slider-wrapper .inner { margin-left: -200%; }
-        #slide4:checked ~ .slider-wrapper .inner { margin-left: -300%; }
-        #slide5:checked ~ .slider-wrapper .inner { margin-left: -400%; }
-        #slide6:checked ~ .slider-wrapper .inner { margin-left: -500%; }
-        #slide7:checked ~ .slider-wrapper .inner { margin-left: -600%; }
-        #slide8:checked ~ .slider-wrapper .inner { margin-left: -700%; }
-
-        /* --- SETAS DE NAVEGAÇÃO --- */
-        .slider-nav {
-            position: absolute;
-            top: 50%;
-            width: 100%;
-            transform: translateY(-50%);
-            display: none; /* Escondido por padrão, mostrado via check */
-            justify-content: space-between;
-            padding: 0 10px;
-            z-index: 10;
-            pointer-events: none;
+        article img {
+          height: 350px;
         }
-
         .slider-nav label {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            pointer-events: auto;
-            color: var(--dark);
-            transition: 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+          width: 30px;
+          height: 30px;
+          font-size: 0.8em;
         }
+      }
 
-        .slider-nav label:hover { background: var(--white); color: var(--primary); }
+      /* Estilização do Botão Flutuante */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        text-decoration: none;
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition:
+          transform 0.3s ease,
+          background-color 0.3s ease;
+      }
 
-        /* Lógica para mostrar as setas certas para cada slide */
-        #slide1:checked ~ .nav-1, #slide2:checked ~ .nav-2, #slide3:checked ~ .nav-3, #slide4:checked ~ .nav-4,
-        #slide5:checked ~ .nav-5, #slide6:checked ~ .nav-6, #slide7:checked ~ .nav-7, #slide8:checked ~ .nav-8 {
-            display: flex;
+      .whatsapp-float i {
+        font-size: 24px;
+      }
+
+      .whatsapp-float:hover {
+        background-color: #128c7e;
+        transform: scale(1.05);
+        color: #fff;
+      }
+
+      /* Esconde o texto no mobile para não ocupar muito espaço, mantendo só o ícone */
+      @media (max-width: 768px) {
+        .whatsapp-float span {
+          display: none;
         }
-
-        /* Categorias (Features) */
-        .special-title { text-align: center; margin-bottom: 3em; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; text-align: center; }
-        .feature-item { padding: 2em; background: var(--light); border-radius: 10px; }
-        .feature-item i { font-size: 3em; color: var(--primary); margin-bottom: 0.5em; }
-
-        /* Footer */
-        footer { background: var(--dark); color: #999; padding: 4em 20px; }
-        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
-        .footer-grid h2 { color: white; margin-bottom: 1em; }
-        .footer-grid dd { color: white; margin-bottom: 1em; }
-        .social-icons { display: flex; gap: 15px; margin-top: 1em; }
-        .social-icons a { font-size: 1.5em; color: white; }
-        .copyright { text-align: center; margin-top: 4em; font-size: 0.8em; }
-
-        /* Mobile */
-        @media (max-width: 768px) {
-            .spotlight { flex-direction: column; text-align: center; }
-            article img { height: 350px; }
-            .slider-nav label { width: 30px; height: 30px; font-size: 0.8em; }
+        .whatsapp-float {
+          padding: 15px;
+          border-radius: 50%;
+          bottom: 15px;
+          right: 15px;
         }
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <header id="header">
-        <img src="images/logoBranca.png" alt="Lalia Cosméticos">
-        <p>Realçando a beleza que há em cada uma, oferecendo cosméticos de qualidade e com preços acessíveis.</p>
+      <img src="images/logoBranca.png" alt="Lalia Cosméticos" />
+      <p>
+        Realçando a beleza que há em cada uma, oferecendo cosméticos de
+        qualidade e com preços acessíveis.
+      </p>
     </header>
 
     <nav>
-        <ul>
-            <li><a href="#intro">Início</a></li>
-            <li><a href="#first">Produtos</a></li>
-            <li><a href="#cta">Contato</a></li>
-        </ul>
+      <ul>
+        <li><a href="#intro">Início</a></li>
+        <li><a href="#first">Produtos</a></li>
+        <li><a href="#cta">Contato</a></li>
+      </ul>
     </nav>
 
     <div class="container" id="intro">
-        <div class="spotlight">
-            <div class="content">
-                <h2>Beleza que Transforma</h2>
-                <p>Na Lalia Cosméticos, selecionamos cuidadosamente cada produto para garantir qualidade e resultados surpreendentes. Conheça nossa linha completa de maquiagens, skincare, fragrâncias exclusivas e cuidados com o cabelo.</p>
-                <a href="#first" class="btn">Ver Catálogo</a>
-            </div>
-
-            <div class="slider-box">
-                <div class="wrapper">
-                    <input type="radio" name="slider" id="slide1" checked />
-                    <input type="radio" name="slider" id="slide2" />
-                    <input type="radio" name="slider" id="slide3" />
-                    <input type="radio" name="slider" id="slide4" />
-                    <input type="radio" name="slider" id="slide5" />
-                    <input type="radio" name="slider" id="slide6" />
-                    <input type="radio" name="slider" id="slide7" />
-                    <input type="radio" name="slider" id="slide8" />
-
-                    <div class="slider-wrapper">
-                        <div class="inner">
-                            <article><img src="images/carrossel01.jpg" /></article>
-                            <article><img src="images/carrossel02.jpg" /></article>
-                            <article><img src="images/carrossel03.jpg" /></article>
-                            <article><img src="images/carrossel04.jpg" /></article>
-                            <article><img src="images/carrossel05.jpg" /></article>
-                            <article><img src="images/carrossel06.jpg" /></article>
-                            <article><img src="images/carrossel07.jpg" /></article>
-                            <article><img src="images/carrossel08.jpg" /></article>
-                        </div>
-                    </div>
-
-                    <div class="slider-nav nav-1"><label for="slide8"><i class="fas fa-chevron-left"></i></label><label for="slide2"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-2"><label for="slide1"><i class="fas fa-chevron-left"></i></label><label for="slide3"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-3"><label for="slide2"><i class="fas fa-chevron-left"></i></label><label for="slide4"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-4"><label for="slide3"><i class="fas fa-chevron-left"></i></label><label for="slide5"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-5"><label for="slide4"><i class="fas fa-chevron-left"></i></label><label for="slide6"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-6"><label for="slide5"><i class="fas fa-chevron-left"></i></label><label for="slide7"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-7"><label for="slide6"><i class="fas fa-chevron-left"></i></label><label for="slide8"><i class="fas fa-chevron-right"></i></label></div>
-                    <div class="slider-nav nav-8"><label for="slide7"><i class="fas fa-chevron-left"></i></label><label for="slide1"><i class="fas fa-chevron-right"></i></label></div>
-                </div>
-            </div>
+      <div class="spotlight">
+        <div class="content">
+          <h2>Beleza que Transforma</h2>
+          <p>
+            Na Lalia Cosméticos, selecionamos cuidadosamente cada produto para
+            garantir qualidade e resultados surpreendentes. Conheça nossa linha
+            completa de maquiagens, skincare, fragrâncias exclusivas e cuidados
+            com o cabelo.
+          </p>
+          <a href="#first" class="btn">Ver Catálogo</a>
         </div>
+
+        <div class="slider-box">
+          <div class="wrapper">
+            <input type="radio" name="slider" id="slide1" checked />
+            <input type="radio" name="slider" id="slide2" />
+            <input type="radio" name="slider" id="slide3" />
+            <input type="radio" name="slider" id="slide4" />
+            <input type="radio" name="slider" id="slide5" />
+            <input type="radio" name="slider" id="slide6" />
+            <input type="radio" name="slider" id="slide7" />
+            <input type="radio" name="slider" id="slide8" />
+
+            <div class="slider-wrapper">
+              <div class="inner">
+                <article><img src="images/carrossel01.jpg" /></article>
+                <article><img src="images/carrossel02.jpg" /></article>
+                <article><img src="images/carrossel03.jpg" /></article>
+                <article><img src="images/carrossel04.jpg" /></article>
+                <article><img src="images/carrossel05.jpg" /></article>
+                <article><img src="images/carrossel06.jpg" /></article>
+                <article><img src="images/carrossel07.jpg" /></article>
+                <article><img src="images/carrossel08.jpg" /></article>
+              </div>
+            </div>
+
+            <div class="slider-nav nav-1">
+              <label for="slide8"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide2"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-2">
+              <label for="slide1"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide3"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-3">
+              <label for="slide2"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide4"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-4">
+              <label for="slide3"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide5"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-5">
+              <label for="slide4"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide6"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-6">
+              <label for="slide5"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide7"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-7">
+              <label for="slide6"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide8"><i class="fas fa-chevron-right"></i></label>
+            </div>
+            <div class="slider-nav nav-8">
+              <label for="slide7"><i class="fas fa-chevron-left"></i></label
+              ><label for="slide1"><i class="fas fa-chevron-right"></i></label>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="container" id="first">
-        <div class="special-title">
-            <h2>Nossas Categorias</h2>
+      <div class="special-title">
+        <h2>Nossas Categorias</h2>
+      </div>
+      <div class="features">
+        <div class="feature-item">
+          <i class="fa-solid fa-heart"></i>
+          <h3>Maquiagem</h3>
+          <p>
+            Linha completa para rosto, olhos e lábios com as melhores marcas.
+          </p>
         </div>
-        <div class="features">
-            <div class="feature-item">
-                <i class="fa-solid fa-heart"></i>
-                <h3>Maquiagem</h3>
-                <p>Linha completa para rosto, olhos e lábios com as melhores marcas.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-leaf"></i>
-                <h3>Skincare</h3>
-                <p>Tratamentos faciais e corporais para manter sua pele radiante.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-magic"></i>
-                <h3>Fragrâncias</h3>
-                <p>Perfumes selecionados que expressam sua personalidade.</p>
-            </div>
-            <div class="feature-item">
-                <i class="fa-solid fa-shower"></i>
-                <h3>Cuidados com o cabelo</h3>
-                <p>Produtos especializados para manter seu cabelo saudável e bem cuidado.</p>
-            </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Skincare</h3>
+          <p>Tratamentos faciais e corporais para manter sua pele radiante.</p>
         </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-magic"></i>
+          <h3>Fragrâncias</h3>
+          <p>Perfumes selecionados que expressam sua personalidade.</p>
+        </div>
+        <div class="feature-item">
+          <i class="fa-solid fa-shower"></i>
+          <h3>Cuidados com o cabelo</h3>
+          <p>
+            Produtos especializados para manter seu cabelo saudável e bem
+            cuidado.
+          </p>
+        </div>
+      </div>
     </div>
 
-    <div class="container" id="cta" style="text-align: center; background: var(--light); border-radius: 20px;">
-        <h2>Fale Conosco</h2>
-        <p>Dúvidas sobre produtos ou pedidos? Chame a gente agora.</p>
-        <div style="margin-top: 2em; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
-            <a href="https://wa.me/5549999143304" class="btn" style="background: #25d366;"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
-            <a href="https://chat.whatsapp.com/BsQfuVv8itJ44FsqZH1KUd?mode=gi_t" class="btn" style="background: #25d366;"><i class="fa-brands fa-whatsapp"></i> Grupo VIP</a>
-            <a href="mailto:laliacosmeticos@gmail.com" class="btn" style="background: var(--dark);"><i class="fa-solid fa-envelope"></i> E-mail</a>
-        </div>
+    <div
+      class="container"
+      id="cta"
+      style="text-align: center; background: var(--light); border-radius: 20px"
+    >
+      <h2>Fale Conosco</h2>
+      <p>Dúvidas sobre produtos ou pedidos? Chame a gente agora.</p>
+      <div
+        style="
+          margin-top: 2em;
+          display: flex;
+          justify-content: center;
+          gap: 20px;
+          flex-wrap: wrap;
+        "
+      >
+        <a
+          href="https://wa.me/5549999143304"
+          class="btn"
+          style="background: #25d366"
+          ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
+        >
+        <a
+          href="https://chat.whatsapp.com/BsQfuVv8itJ44FsqZH1KUd?mode=gi_t"
+          class="btn"
+          style="background: #25d366"
+          ><i class="fa-brands fa-whatsapp"></i> Grupo VIP</a
+        >
+        <a
+          href="mailto:laliacosmeticos@gmail.com"
+          class="btn"
+          style="background: var(--dark)"
+          ><i class="fa-solid fa-envelope"></i> E-mail</a
+        >
+      </div>
     </div>
 
     <footer>
-        <div class="footer-grid">
-            <section>
-                <h2>Sobre Nós</h2>
-                <p>Especialista em cosméticos de alta qualidade em Herval d'Oeste/SC. Trazendo tendências e autocuidado para você.</p>
-            </section>
-            <section>
-                <h2>Endereço</h2>
-                <p>Av. Santos Dumont, 204 - Centro<br>Herval d'Oeste/SC</p>
-                <div class="social-icons">
-                    <a href="https://www.facebook.com/laliacosmeticosperfumaria"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://www.instagram.com/laliacosmeticos"><i class="fa-brands fa-instagram"></i></a>
-                </div>
-            </section>
-            <section>
-                <h2>Contato</h2>
-                <p><strong>Fone:</strong> (49) 99914-3304</p>
-                <p><strong>Email:</strong> laliacosmeticos@gmail.com</p>
-            </section>
-        </div>
-        <p class="copyright">&copy; Lalia Cosméticos - Criado por @wagcasagrande</p>
+      <div class="footer-grid">
+        <section>
+          <h2>Sobre Nós</h2>
+          <p>
+            Especialista em cosméticos de alta qualidade em Herval d'Oeste/SC.
+            Trazendo tendências e autocuidado para você.
+          </p>
+        </section>
+        <section>
+          <h2>Endereço</h2>
+          <p>Av. Santos Dumont, 204 - Centro<br />Herval d'Oeste/SC</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/laliacosmeticosperfumaria"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/laliacosmeticos"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </section>
+        <section>
+          <h2>Contato</h2>
+          <p><strong>Fone:</strong> (49) 99914-3304</p>
+          <p><strong>Email:</strong> laliacosmeticos@gmail.com</p>
+        </section>
+      </div>
+      <p class="copyright">
+        &copy; Lalia Cosméticos - Criado por @wagcasagrande
+      </p>
     </footer>
 
-</body>
+    <a
+      href="https://wa.me/5549999143304"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+      <span>Fale Conosco</span>
+    </a>
+  </body>
 </html>
