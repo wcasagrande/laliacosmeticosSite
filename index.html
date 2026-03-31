@@ -12,6 +12,8 @@
       content="Lalia Cosméticos em Herval d'Oeste/SC. Maquiagens, skincare e fragrâncias exclusivas."
     />
 
+    <link rel="preload" as="image" href="images/carrossel01.jpg" />
+
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -30,7 +32,7 @@
     <style>
       /* Variáveis de Cores */
       :root {
-        --primary: #d44c5c; /* Rosa Lalia */
+        --primary: #d44c5c;
         --dark: #352151;
         --light: #f4f4f4;
         --white: #ffffff;
@@ -72,7 +74,6 @@
       nav {
         background: var(--white);
         border-bottom: 1px solid #eee;
-        top: 0;
         z-index: 1000;
         text-align: center;
         padding: 1em 0;
@@ -123,7 +124,7 @@
         transform: translateY(-3px);
       }
 
-      /* --- CARROSSEL PURE CSS (ATUALIZADO) --- */
+      /* --- CARROSSEL PURE CSS --- */
       .slider-box {
         flex: 1;
         min-width: 300px;
@@ -187,7 +188,7 @@
         top: 50%;
         width: 100%;
         transform: translateY(-50%);
-        display: none; /* Escondido por padrão, mostrado via check */
+        display: none;
         justify-content: space-between;
         padding: 0 10px;
         z-index: 10;
@@ -214,7 +215,7 @@
         color: var(--primary);
       }
 
-      /* Lógica para mostrar as setas certas para cada slide */
+      /* Exibir setas conforme slide */
       #slide1:checked ~ .nav-1,
       #slide2:checked ~ .nav-2,
       #slide3:checked ~ .nav-3,
@@ -226,7 +227,7 @@
         display: flex;
       }
 
-      /* Categorias (Features) */
+      /* Categorias */
       .special-title {
         text-align: center;
         margin-bottom: 3em;
@@ -265,10 +266,6 @@
         color: white;
         margin-bottom: 1em;
       }
-      .footer-grid dd {
-        color: white;
-        margin-bottom: 1em;
-      }
       .social-icons {
         display: flex;
         gap: 15px;
@@ -300,34 +297,28 @@
         }
       }
 
-      /* Estilização do Botão Flutuante */
+      /* WhatsApp Float */
       .whatsapp-float {
         position: fixed;
         bottom: 20px;
         right: 20px;
         background-color: #25d366;
         color: #fff;
-        padding: 10px 20px;
-        border-radius: 50px;
+        padding: 15px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
-        gap: 10px;
-        font-weight: bold;
-        text-decoration: none;
+        justify-content: center;
         z-index: 9999;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        transition:
-          transform 0.3s ease,
-          background-color 0.3s ease;
+        transition: 0.3s;
       }
-
       .whatsapp-float i {
         font-size: 24px;
       }
-
       .whatsapp-float:hover {
+        transform: scale(1.1);
         background-color: #128c7e;
-        transform: scale(1.05);
         color: #fff;
       }
     </style>
@@ -335,7 +326,7 @@
 
   <body>
     <header id="header">
-      <img src="images/logoBranca.png" alt="Lalia Cosméticos" />
+      <img src="images/logoBranca.png" alt="Logo Lalia Cosméticos" />
       <p>
         Realçando a beleza que há em cada uma, oferecendo cosméticos de
         qualidade e com preços acessíveis.
@@ -356,9 +347,7 @@
           <h2>Beleza que Transforma</h2>
           <p>
             Na Lalia Cosméticos, selecionamos cuidadosamente cada produto para
-            garantir qualidade e resultados surpreendentes. Conheça nossa linha
-            completa de maquiagens, skincare, fragrâncias exclusivas e cuidados
-            com o cabelo.
+            garantir qualidade e resultados surpreendentes.
           </p>
           <a href="#first" class="btn">Ver Catálogo</a>
         </div>
@@ -376,14 +365,48 @@
 
             <div class="slider-wrapper">
               <div class="inner">
-                <article><img src="images/carrossel01.jpg" /></article>
-                <article><img src="images/carrossel02.jpg" /></article>
-                <article><img src="images/carrossel03.jpg" /></article>
-                <article><img src="images/carrossel04.jpg" /></article>
-                <article><img src="images/carrossel05.jpg" /></article>
-                <article><img src="images/carrossel06.jpg" /></article>
-                <article><img src="images/carrossel07.jpg" /></article>
-                <article><img src="images/carrossel08.jpg" /></article>
+                <article>
+                  <img
+                    src="images/carrossel01.jpg"
+                    alt="Perfumes Importados Masculinos"
+                  />
+                </article>
+                <article>
+                  <img
+                    src="images/carrossel02.jpg"
+                    alt="Perfumes Importados Femininos"
+                  />
+                </article>
+                <article>
+                  <img
+                    src="images/carrossel03.jpg"
+                    alt="Máscaras de Cabelo Karseell"
+                  />
+                </article>
+                <article>
+                  <img
+                    src="images/carrossel04.jpg"
+                    alt="Máscaras de Cabelo Karseell"
+                  />
+                </article>
+                <article>
+                  <img src="images/carrossel05.jpg" alt="Esmaltes de Unhas" />
+                </article>
+                <article>
+                  <img src="images/carrossel06.jpg" alt="Skincare" />
+                </article>
+                <article>
+                  <img
+                    src="images/carrossel07.jpg"
+                    alt="Progressivas e Alisamentos"
+                  />
+                </article>
+                <article>
+                  <img
+                    src="images/carrossel08.jpg"
+                    alt="Cuidados com a Cabelo"
+                  />
+                </article>
               </div>
             </div>
 
@@ -425,21 +448,17 @@
     </div>
 
     <div class="container" id="first">
-      <div class="special-title">
-        <h2>Nossas Categorias</h2>
-      </div>
+      <div class="special-title"><h2>Nossas Categorias</h2></div>
       <div class="features">
         <div class="feature-item">
           <i class="fa-solid fa-heart"></i>
           <h3>Maquiagem</h3>
-          <p>
-            Linha completa para rosto, olhos e lábios com as melhores marcas.
-          </p>
+          <p>As melhores marcas para o rosto, olhos e lábios.</p>
         </div>
         <div class="feature-item">
           <i class="fa-solid fa-leaf"></i>
           <h3>Skincare</h3>
-          <p>Tratamentos faciais e corporais para manter sua pele radiante.</p>
+          <p>Tratamentos faciais e corporais para sua pele radiante.</p>
         </div>
         <div class="feature-item">
           <i class="fa-solid fa-magic"></i>
@@ -448,11 +467,8 @@
         </div>
         <div class="feature-item">
           <i class="fa-solid fa-shower"></i>
-          <h3>Cuidados com o cabelo</h3>
-          <p>
-            Produtos especializados para manter seu cabelo saudável e bem
-            cuidado.
-          </p>
+          <h3>Cabelos</h3>
+          <p>Produtos para manter seu cabelo saudável e bem cuidado.</p>
         </div>
       </div>
     </div>
@@ -474,7 +490,7 @@
         "
       >
         <a
-          href="https://wa.me/5549999143304"
+          href="https://wa.me/5549999143304?text=Olá!%20Vi%20o%20site%20e%20quero%20informações."
           class="btn"
           style="background: #25d366"
           ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
@@ -500,7 +516,6 @@
           <h2>Sobre Nós</h2>
           <p>
             Especialista em cosméticos de alta qualidade em Herval d'Oeste/SC.
-            Trazendo tendências e autocuidado para você.
           </p>
         </section>
         <section>
@@ -527,11 +542,12 @@
     </footer>
 
     <a
-      href="https://wa.me/5549999143304?text=Olá!%20Estava%20no%20site%20e%20quero%20informações%20sobre%20os%20produtos."
+      href="https://wa.me/5549999143304?text=Olá!%20Vi%20o%20site%20e%20quero%20informações."
       class="whatsapp-float"
       target="_blank"
-      rel="noopener noreferrer"    >
-      <i class="fa-brands fa-whatsapp"></i>      
+      rel="noopener noreferrer"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
     </a>
   </body>
 </html>
