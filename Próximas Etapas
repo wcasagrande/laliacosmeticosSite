@@ -1,0 +1,3 @@
+- Montar a galeria/catálogo 
+- Dica de Python: Você pode criar um script simples usando a biblioteca Pillow para varrer sua pasta de fotos brutas, redimensionar todas para 800px e salvar como WebP otimizado antes de subir para o GitHub.
+- 404 Page not found - Amigável para o usuário, com um link de volta para a página inicial.   

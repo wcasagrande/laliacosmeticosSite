@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <title>Página não encontrada - Lalia Cosméticos</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <style>
+      /* --- VARIÁVEIS E RESET --- */
+      :root {
+        --primary: #d44c5c;
+        --dark: #352151;
+        --light: #f4f4f4;
+        --white: #ffffff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background-color: var(--white);
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+        transition: 0.3s;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      /* --- HEADER & NAV --- */
+      header {
+        background: var(--dark);
+        color: white;
+        text-align: center;
+        padding: 4em 2em;
+      }
+
+      header img {
+        max-width: 200px;
+        margin-bottom: 1em;
+      }
+
+      nav {
+        background: var(--white);
+        border-bottom: 1px solid #eee;
+        z-index: 1000;
+        text-align: center;
+        padding: 1em 0;
+        position: sticky;
+        top: 0;
+      }
+
+      nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      nav a:hover {
+        color: var(--primary);
+      }
+
+      /* --- LAYOUT E CONTAINERS --- */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 4em 20px;
+      }
+
+      /* --- SEÇÃO DE ERRO 404 --- */
+      .error-wrapper {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4em 20px;
+        text-align: center;
+      }
+
+      .error-container {
+        max-width: 600px;
+      }
+
+      .error-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .error-container h1 {
+        font-size: 6em;
+        color: var(--primary);
+        line-height: 1;
+      }
+
+      /* --- FOOTER --- */
+      footer {
+        background: var(--dark);
+        color: #999;
+        padding: 4em 20px;
+        margin-top: auto;
+      }
+
+      .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+      }
+
+      .footer-grid h2,
+      .footer-grid p {
+        color: white;
+        margin-bottom: 1em;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 1em;
+      }
+
+      .social-icons a {
+        font-size: 1.5em;
+        color: white;
+      }
+
+      .copyright {
+        text-align: center;
+        margin-top: 4em;
+        font-size: 0.8em;
+      }
+
+      /* --- WHATSAPP FLOAT --- */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #25d366;
+        color: #fff;
+        padding: 15px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: 0.3s;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        background-color: #128c7e;
+        color: #fff;
+      }
+
+      /* --- RESPONSIVIDADE --- */
+      @media (max-width: 768px) {
+        .spotlight {
+          flex-direction: column;
+          text-align: center;
+        }
+        article img {
+          height: 350px;
+        }
+        .footer-grid {
+          text-align: center;
+        }
+        .social-icons {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="error-wrapper">
+      <div class="error-container">
+        <img
+          src="images/perfumederrubado404.jpg"
+          alt="Perfume derrubado - Erro 404"
+        />
+        <h1>404</h1>
+        <h2>Ops! A beleza se perdeu por aqui.</h2>
+        <p>
+          A página que você está procurando não existe ou foi movida. Mas não se
+          preocupe, ainda temos muitos produtos incríveis esperando por você!
+        </p>
+        <a href="index.html" class="btn">Voltar para a Página Inicial</a>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-grid">
+        <section>
+          <h2>Sobre Nós</h2>
+          <p>
+            Especialista em cosméticos de alta qualidade em Herval d'Oeste/SC.
+          </p>
+        </section>
+        <section>
+          <h2>Endereço</h2>
+          <p>Av. Santos Dumont, 204 - Centro<br />Herval d'Oeste/SC</p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/laliacosmeticosperfumaria"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/laliacosmeticos"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </section>
+        <section>
+          <h2>Contato</h2>
+          <p><strong>Fone:</strong> (49) 99914-3304</p>
+          <p><strong>Email:</strong> laliacosmeticos@gmail.com</p>
+        </section>
+      </div>
+      <p class="copyright">
+        &copy; Lalia Cosméticos - Criado por @wagcasagrande
+      </p>
+    </footer>
+  </body>
+</html>
